@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: app-prod
+    image: app-prod
+    build:
+      context: .
+      dockerfile: Dockerfile-prod
+    volumes:
+      - ./src:/app/src
+      - '/app/node_modules'
+    ports:
+      - 1337:80
